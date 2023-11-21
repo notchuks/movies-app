@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public abstract class MovieMapper {
 
     @Autowired
-    UserExtraService userExtraService;
+    protected UserExtraService userExtraService;
 
     @Mapping(target = "comments", ignore = true)
     public abstract Movie toMovie(CreateMovieRequest createMovieRequest);

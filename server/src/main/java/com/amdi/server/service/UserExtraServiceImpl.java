@@ -15,7 +15,7 @@ public class UserExtraServiceImpl implements UserExtraService {
     private final UserExtraRepository userExtraRepository;
 
     @Override
-    public UserExtra validateAndGetUser(String username) {
+    public UserExtra validateAndGetUserExtra(String username) {
         return getUserExtra(username).orElseThrow(() -> new UsernameNotFoundException(username));
     }
 

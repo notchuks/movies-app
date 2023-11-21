@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class AddComentRequest {
+public class AddCommentRequest {
 
     @Schema(example = "Very Good!")
     @NotBlank

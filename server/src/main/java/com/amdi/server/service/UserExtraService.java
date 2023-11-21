@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface UserExtraService {
 
-    UserExtra validateAndGetUser(String username);
+    UserExtra validateAndGetUserExtra(String username);
 
     Optional<UserExtra> getUserExtra(String username);
 

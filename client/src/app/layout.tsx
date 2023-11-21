@@ -1,5 +1,10 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import { Navbar, Footer } from '@/app/components';
+import Providers from '@/utils/provider';
+import { SessionProvider } from 'next-auth/react';
+import SessionProviderWrapper from '@/utils/sessionProviderWrapper';
+
+import './globals.css';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,9 +18,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // const keycloak = new Keycloak({
+  //   url: process.env.NEXT_PUBLIC_KEYCLOAK_BASE_URL,
+  //   realm: "movies-realm",
+  //   clientId: "movies-app",
+  // });
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>
+          <SessionProviderWrapper>
+            <Navbar />
+              {children}
+            <Footer />
+          </SessionProviderWrapper>
+        </Providers>
+      </body>
     </html>
-  )
+  );
 }
